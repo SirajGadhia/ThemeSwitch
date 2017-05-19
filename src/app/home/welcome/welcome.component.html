@@ -1,0 +1,29 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <h4>Chosse Theme</h4>
+            <div>
+                <select [(ngModel)]="colour" (change)="onChange($event.target.value)">
+                <option *ngFor="let col of colours" [value]="col"
+               
+                 >{{col}}</option>
+            </select>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="swatches">
+                <div [class]="getTitleClass(color)">
+                    <h3>#{{color}}</h3>
+                </div>
+                <span [class]="getColor50(color)">50</span>
+
+                <span *ngFor="let i of shades" [class]="getshadesClass(color, i)">#{{i * 100}}</span>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
